@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conceptualizer — Nigerian Army Depot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="asset/styles.css">
+</head>
+<body>
+
+  <!-- Spinning watermark background -->
+  <div class="bg-layer" aria-hidden="true">
+    <img src="asset/images/depot-logo.png" alt="" class="bg-logo" onerror="this.style.display='none'">
+  </div>
+
+  <!-- Five-strip colour transition (load entrance + future navigation) -->
+  <div class="strips-container" aria-hidden="true">
+    <div class="strip s1"></div>
+    <div class="strip s2"></div>
+    <div class="strip s3"></div>
+    <div class="strip s4"></div>
+    <div class="strip s5"></div>
+  </div>
+
+  <!-- ================================
+       MAIN PAGE VIEW
+       ================================ -->
+  <div class="page-view active">
+
+    <!-- Fixed top navbar -->
+    <nav class="navbar">
+      <div class="brand">
+        <img src="asset/images/depot-logo.png" alt="Depot Logo" class="nav-logo" onerror="this.style.display='none'">
+        <div>
+          <span class="brand-main">NIGERIAN ARMY DEPOT</span>
+          <span class="brand-sub">Conceptualizer</span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Fixed, no-scroll body -->
+    <main class="page-body">
+      <section class="hero-section glass-panel hero-panel">
+        <div class="hero-badge">Conceptualizer</div>
+
+        <div class="portrait-frame">
+          <img id="portrait"
+               src="asset/images/LATE COAS POTRAIT.jpeg"
+               alt="Late Lt Gen TA Lagbaja"
+               class="portrait-img">
+          <div class="portrait-shine" aria-hidden="true"></div>
+        </div>
+
+        <div class="nameplate">
+          <h1 id="name">General Lagbaja</h1>
+          <p id="title-role">Chief of Army Staff</p>
+          <p id="decorations" class="decorations-strip"></p>
+        </div>
+      </section>
+
+      <section class="action-panel glass-panel">
+        <div class="section-label">Choose a View</div>
+        <div class="action-buttons" role="tablist" aria-label="Conceptualizer sections">
+          <button type="button" class="action-btn active" data-view="bioView">Biography</button>
+          <button type="button" class="action-btn" data-view="achView">Achievements</button>
+          <button type="button" class="action-btn" data-view="galView">Gallery</button>
+        </div>
+
+        <div class="detail-window">
+          <section id="bioView" class="detail-view active"></section>
+          <section id="achView" class="detail-view"></section>
+          <section id="galView" class="detail-view"></section>
+        </div>
+      </section>
+    </main>
+  </div><!-- /page-view -->
+
+  <script src="asset/script.js"></script>
+</body>
+</html>
