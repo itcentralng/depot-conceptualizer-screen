@@ -158,6 +158,46 @@ body { animation: pageLoad 0.8s ease both; }
   overflow: hidden;
 }
 
+.home-layout {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  align-content: center;
+}
+
+.home-layout .hero-panel,
+.home-layout .action-panel {
+  width: min(780px, 100%);
+}
+
+.home-layout .hero-panel {
+  padding-top: 16px;
+  padding-bottom: 18px;
+}
+
+.home-layout .action-panel {
+  padding-bottom: 20px;
+}
+
+.home-layout .portrait-frame {
+  width: min(520px, 72vw);
+  height: min(680px, 58vh);
+}
+
+.home-layout .action-buttons {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .home-layout .action-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .home-layout .portrait-frame {
+    width: min(420px, 84vw);
+    height: min(560px, 52vh);
+  }
+}
+
 .detail-layout {
   height: calc(100vh - 72px);
   padding: 28px 32px 32px;
