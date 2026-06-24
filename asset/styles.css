@@ -241,11 +241,11 @@ body { animation: pageLoad 0.8s ease both; }
 }
 
 .achievements-page-shell .detail-card {
-  height: min(58vh, 700px);
+  height: min(88vh, 1400px);
 }
 
 .gallery-page-shell .detail-card {
-  height: min(70vh, 860px);
+  height: min(88vh, 1720px);
 }
 
 @media (max-width: 900px) {
@@ -254,11 +254,11 @@ body { animation: pageLoad 0.8s ease both; }
   }
 
   .achievements-page-shell .detail-card {
-    height: min(62vh, 600px);
+    height: min(88vh, 1200px);
   }
 
   .gallery-page-shell .detail-card {
-    height: min(76vh, 700px);
+    height: min(88vh, 1400px);
   }
 }
 
@@ -536,6 +536,22 @@ body { animation: pageLoad 0.8s ease both; }
 }
 
 .bio-page-shell .detail-copy {
+  font-size: 1.75rem;
+}
+
+body[data-page='achievements'] .ach-list li {
+  font-size: 1.75rem;
+}
+
+body[data-page='achievements'] .ach-list li::before {
+  font-size: 1.65rem;
+}
+
+body[data-page='gallery'] .g-caption {
+  font-size: 1.1rem;
+}
+
+body[data-page='gallery'] .gallery-modal-caption {
   font-size: 1.75rem;
 }
 
