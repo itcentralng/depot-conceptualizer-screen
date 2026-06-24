@@ -111,6 +111,11 @@ body { animation: pageLoad 0.8s ease both; }
   position: relative; z-index: 100;
 }
 
+.navbar .brand {
+  margin-left: auto;
+  text-align: right;
+}
+
 /* thin red accent line along top of navbar */
 .navbar::before {
   content: '';
@@ -170,7 +175,7 @@ body { animation: pageLoad 0.8s ease both; }
 
 .home-layout .hero-panel,
 .home-layout .action-panel {
-  width: min(780px, 100%);
+  width: min(1014px, 100%);
 }
 
 .home-layout .hero-panel {
@@ -183,8 +188,8 @@ body { animation: pageLoad 0.8s ease both; }
 }
 
 .home-layout .portrait-frame {
-  width: min(520px, 72vw);
-  height: min(680px, 58vh);
+  width: min(676px, 72vw);
+  height: min(884px, 66vh);
 }
 
 .home-layout .action-buttons {
@@ -197,8 +202,8 @@ body { animation: pageLoad 0.8s ease both; }
   }
 
   .home-layout .portrait-frame {
-    width: min(420px, 84vw);
-    height: min(560px, 52vh);
+    width: min(546px, 84vw);
+    height: min(728px, 58vh);
   }
 }
 
