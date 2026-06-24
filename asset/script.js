@@ -67,6 +67,14 @@
     var paused = false;
     var step = 0.35;
 
+    function pauseFor(ms) {
+      paused = true;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(function () {
+        paused = false;
+      }, ms);
+    }
+
     function tick() {
       if (paused) {
         timer = window.setTimeout(tick, 60);
@@ -87,9 +95,9 @@
 
     scroller.addEventListener('mouseenter', function () { paused = true; });
     scroller.addEventListener('mouseleave', function () { paused = false; });
-    scroller.addEventListener('touchstart', function () { paused = true; }, { passive: true });
-    scroller.addEventListener('touchend', function () { paused = false; }, { passive: true });
-    scroller.addEventListener('wheel', function () { paused = true; clearTimeout(timer); timer = window.setTimeout(function () { paused = false; }, 1200); }, { passive: true });
+    scroller.addEventListener('touchstart', function () { pauseFor(1500); }, { passive: true });
+    scroller.addEventListener('wheel', function () { pauseFor(1500); }, { passive: true });
+    scroller.addEventListener('scroll', function () { pauseFor(900); }, { passive: true });
 
     timer = window.setTimeout(tick, 1200);
   }

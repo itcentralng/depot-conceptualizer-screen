@@ -210,6 +210,8 @@ body { animation: pageLoad 0.8s ease both; }
 
 .detail-layout.single-column {
   grid-template-columns: 1fr;
+  justify-items: center;
+  align-content: start;
 }
 
 .achievements-page-shell,
@@ -217,6 +219,38 @@ body { animation: pageLoad 0.8s ease both; }
 .bio-page-shell {
   width: min(1100px, 100%);
   margin: 0 auto;
+}
+
+.bio-page-shell .detail-card,
+.achievements-page-shell .detail-card,
+.gallery-page-shell .detail-card {
+  flex: 0 0 auto;
+}
+
+.bio-page-shell .detail-card {
+  height: min(66vh, 760px);
+}
+
+.achievements-page-shell .detail-card {
+  height: min(58vh, 700px);
+}
+
+.gallery-page-shell .detail-card {
+  height: min(70vh, 860px);
+}
+
+@media (max-width: 900px) {
+  .bio-page-shell .detail-card {
+    height: min(72vh, 680px);
+  }
+
+  .achievements-page-shell .detail-card {
+    height: min(62vh, 600px);
+  }
+
+  .gallery-page-shell .detail-card {
+    height: min(76vh, 700px);
+  }
 }
 
 /* ─── Hero ───────────────────────────────────────────── */
@@ -510,7 +544,8 @@ body { animation: pageLoad 0.8s ease both; }
   display: flex;
   flex-direction: column;
   gap: 16px;
-  height: 100%;
+  height: auto;
+  min-height: 100%;
 }
 
 .detail-heading {
@@ -538,12 +573,8 @@ body { animation: pageLoad 0.8s ease both; }
 .gallery-scroll {
   height: 100%;
   overflow: auto;
-}
-
-.achievements-page-shell .detail-card,
-.gallery-page-shell .detail-card,
-.bio-page-shell .detail-card {
-  min-height: calc(100vh - 220px);
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .detail-gallery {
@@ -719,7 +750,7 @@ body { animation: pageLoad 0.8s ease both; }
   list-style: none;
   padding: 0; margin: 0;
   display: grid;
-  gap: 12px;
+  gap: 16px;
   counter-reset: ach;
 }
 
@@ -729,13 +760,13 @@ body { animation: pageLoad 0.8s ease both; }
   grid-template-columns: 40px 1fr;
   gap: 14px;
   align-items: start;
-  padding: 14px 18px;
+  padding: 16px 18px;
   border-radius: 10px;
   background: rgba(217, 57, 50, 0.065);
   border: 1px solid rgba(217, 57, 50, 0.22);
   font-family: var(--f-serif);
-  font-size: 1.12rem;
-  line-height: 1.7;
+  font-size: 1.16rem;
+  line-height: 1.8;
   color: rgba(253, 254, 255, 0.90);
   transition: background 0.2s, border-color 0.2s;
 }
