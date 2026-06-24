@@ -212,6 +212,13 @@ body { animation: pageLoad 0.8s ease both; }
   grid-template-columns: 1fr;
 }
 
+.achievements-page-shell,
+.gallery-page-shell,
+.bio-page-shell {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
 /* ─── Hero ───────────────────────────────────────────── */
 .hero-section {
   width: 100%;
@@ -533,6 +540,12 @@ body { animation: pageLoad 0.8s ease both; }
   overflow: auto;
 }
 
+.achievements-page-shell .detail-card,
+.gallery-page-shell .detail-card,
+.bio-page-shell .detail-card {
+  min-height: calc(100vh - 220px);
+}
+
 .detail-gallery {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -566,6 +579,71 @@ body { animation: pageLoad 0.8s ease both; }
 
 .detail-gallery .g-tile img {
   object-position: top center;
+}
+
+.gallery-open {
+  appearance: none;
+  border: 1px solid rgba(217, 57, 50, 0.22);
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.gallery-open:focus-visible {
+  outline: 2px solid rgba(217, 57, 50, 0.85);
+  outline-offset: 3px;
+}
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(3, 6, 7, 0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.gallery-modal.open {
+  display: flex;
+}
+
+.gallery-modal img {
+  max-width: min(92vw, 1400px);
+  max-height: 78vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-modal-caption {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 28px;
+  text-align: center;
+  font-family: var(--f-serif);
+  font-size: 1.1rem;
+  color: rgba(253, 254, 255, 0.92);
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 57, 50, 0.45);
+  background: rgba(3, 6, 7, 0.9);
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .decorations-strip {

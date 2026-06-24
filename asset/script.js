@@ -60,7 +60,7 @@
     var target = document.getElementById(targetId);
     if (!target) return;
 
-    var scroller = target.querySelector('.bio-scroll');
+    var scroller = target.querySelector('.bio-scroll, .ach-scroll');
     if (!scroller) return;
 
     var timer = null;
@@ -94,6 +94,15 @@
     timer = window.setTimeout(tick, 1200);
   }
 
+  function renderRichText(targetId, title, paragraphs, className) {
+    var target = document.getElementById(targetId);
+    if (!target) return;
+
+    target.innerHTML = '<div class="detail-heading">' + title + '</div><div class="detail-card ' + className + ' detail-copy">' +
+      paragraphs.map(function (para) { return '<p>' + para + '</p>'; }).join('') +
+      '</div>';
+  }
+
   function renderAchievements(targetId) {
     var target = document.getElementById(targetId);
     if (!target) return;
@@ -109,9 +118,49 @@
 
     target.innerHTML = '<div class="detail-heading">Gallery</div><div class="detail-card gallery-scroll"><div class="detail-gallery">' +
       DATA.gallery.map(function (item) {
-        return '<figure class="g-tile"><img src="asset/images/' + item.file + '" alt="' + item.caption + '" loading="lazy"><figcaption class="g-caption">' + item.caption + '</figcaption></figure>';
+        return '<button type="button" class="g-tile gallery-open" data-fullsrc="asset/images/' + item.file + '" data-caption="' + item.caption + '"><img src="asset/images/' + item.file + '" alt="' + item.caption + '" loading="lazy"><span class="g-caption">' + item.caption + '</span></button>';
       }).join('') +
       '</div></div>';
+
+    bindGalleryModal();
+  }
+
+  function bindGalleryModal() {
+    var modal = document.getElementById('galleryModal');
+    var modalImage = document.getElementById('galleryModalImage');
+    var modalCaption = document.getElementById('galleryModalCaption');
+    if (!modal || !modalImage || !modalCaption) return;
+
+    var closeButton = modal.querySelector('.gallery-modal-close');
+
+    function openModal(src, caption) {
+      modalImage.src = src;
+      modalImage.alt = caption;
+      modalCaption.textContent = caption;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImage.src = '';
+      modalCaption.textContent = '';
+    }
+
+    document.querySelectorAll('.gallery-open').forEach(function (button) {
+      button.addEventListener('click', function () {
+        openModal(button.getAttribute('data-fullsrc'), button.getAttribute('data-caption'));
+      });
+    });
+
+    closeButton.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeModal();
+    });
   }
 
   function runStrips() {
@@ -139,6 +188,7 @@
     startAutoScroll('bioPage');
   } else if (page === 'achievements') {
     renderAchievements('achievementsPage');
+    startAutoScroll('achievementsPage');
   } else if (page === 'gallery') {
     renderGallery('galleryPage');
   } else {
