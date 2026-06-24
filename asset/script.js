@@ -42,62 +42,43 @@
     ]
   };
 
-  var views = {
-    bioView: document.getElementById('bioView'),
-    achView: document.getElementById('achView'),
-    galView: document.getElementById('galView')
-  };
-
-  var buttons = document.querySelectorAll('.action-btn');
-
-  function renderBiography() {
-    views.bioView.innerHTML = [
-      '<div class="detail-title">Biography</div>',
-      '<div class="detail-copy">',
-      DATA.biography.map(function (para) { return '<p>' + para + '</p>'; }).join(''),
-      '</div>'
-    ].join('');
+  function setText(id, value) {
+    var node = document.getElementById(id);
+    if (node) node.textContent = value;
   }
 
-  function renderAchievements() {
-    views.achView.innerHTML = [
-      '<div class="detail-title">Achievements</div>',
-      '<ol class="ach-list">',
-      DATA.achievements.map(function (item) { return '<li>' + item + '</li>'; }).join(''),
-      '</ol>'
-    ].join('');
+  function renderBiography(targetId) {
+    var target = document.getElementById(targetId);
+    if (!target) return;
+
+    target.innerHTML = '<div class="detail-heading">Biography</div><div class="detail-card bio-scroll detail-copy">' +
+      DATA.biography.map(function (para) { return '<p>' + para + '</p>'; }).join('') +
+      '</div>';
   }
 
-  function renderGallery() {
-    views.galView.innerHTML = [
-      '<div class="detail-title">Gallery</div>',
-      '<div class="detail-gallery">',
+  function renderAchievements(targetId) {
+    var target = document.getElementById(targetId);
+    if (!target) return;
+
+    target.innerHTML = '<div class="detail-heading">Achievements</div><div class="detail-card ach-scroll"><ol class="ach-list">' +
+      DATA.achievements.map(function (item) { return '<li>' + item + '</li>'; }).join('') +
+      '</ol></div>';
+  }
+
+  function renderGallery(targetId) {
+    var target = document.getElementById(targetId);
+    if (!target) return;
+
+    target.innerHTML = '<div class="detail-heading">Gallery</div><div class="detail-card gallery-scroll"><div class="detail-gallery">' +
       DATA.gallery.map(function (item) {
-        return [
-          '<figure class="g-tile">',
-          '<img src="asset/images/' + item.file + '" alt="' + item.caption + '" loading="lazy">',
-          '<figcaption class="g-caption">' + item.caption + '</figcaption>',
-          '</figure>'
-        ].join('');
-      }).join(''),
-      '</div>'
-    ].join('');
-  }
-
-  function setActiveView(viewId) {
-    Object.keys(views).forEach(function (key) {
-      views[key].classList.toggle('active', key === viewId);
-    });
-
-    buttons.forEach(function (button) {
-      var active = button.getAttribute('data-view') === viewId;
-      button.classList.toggle('active', active);
-      button.setAttribute('aria-pressed', active ? 'true' : 'false');
-    });
+        return '<figure class="g-tile"><img src="asset/images/' + item.file + '" alt="' + item.caption + '" loading="lazy"><figcaption class="g-caption">' + item.caption + '</figcaption></figure>';
+      }).join('') +
+      '</div></div>';
   }
 
   function runStrips() {
     var strips = document.querySelectorAll('.strip');
+    if (!strips.length) return;
     strips.forEach(function (strip) { strip.classList.add('slide-in'); });
     setTimeout(function () {
       strips.forEach(function (strip) {
@@ -110,21 +91,18 @@
     }, 850);
   }
 
-  document.getElementById('name').textContent = DATA.name;
-  document.getElementById('title-role').textContent = DATA.titleRole;
-  document.getElementById('decorations').textContent = DATA.decorations;
+  setText('name', DATA.name);
+  setText('title-role', DATA.titleRole);
+  setText('decorations', DATA.decorations);
 
-  renderBiography();
-  renderAchievements();
-  renderGallery();
-
-  buttons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      setActiveView(button.getAttribute('data-view'));
-      runStrips();
-    });
-  });
-
-  setActiveView('bioView');
-  runStrips();
+  var page = document.body.getAttribute('data-page') || 'home';
+  if (page === 'bio') {
+    renderBiography('bioPage');
+  } else if (page === 'achievements') {
+    renderAchievements('achievementsPage');
+  } else if (page === 'gallery') {
+    renderGallery('galleryPage');
+  } else {
+    runStrips();
+  }
 })();

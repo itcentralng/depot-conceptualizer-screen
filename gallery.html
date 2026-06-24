@@ -3,20 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conceptualizer — Nigerian Army Depot</title>
+  <title>Conceptualizer Gallery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="asset/styles.css">
 </head>
-<body data-page="home">
-
-  <!-- Spinning watermark background -->
+<body data-page="gallery">
   <div class="bg-layer" aria-hidden="true">
     <img src="asset/images/depot-logo.png" alt="" class="bg-logo" onerror="this.style.display='none'">
   </div>
-
-  <!-- Five-strip colour transition (load entrance + future navigation) -->
   <div class="strips-container" aria-hidden="true">
     <div class="strip s1"></div>
     <div class="strip s2"></div>
@@ -25,12 +21,7 @@
     <div class="strip s5"></div>
   </div>
 
-  <!-- ================================
-       MAIN PAGE VIEW
-       ================================ -->
-  <div class="page-view active" data-page="home">
-
-    <!-- Fixed top navbar -->
+  <div class="page-view active" data-page="gallery">
     <nav class="navbar">
       <div class="brand">
         <img src="asset/images/depot-logo.png" alt="Depot Logo" class="nav-logo" onerror="this.style.display='none'">
@@ -41,18 +32,19 @@
       </div>
     </nav>
 
-    <main class="page-body home-layout">
-      <section class="hero-section glass-panel hero-panel">
-        <div class="hero-badge">Conceptualizer</div>
+    <a class="close-btn" href="index.html" aria-label="Close gallery and return home" title="Close">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </a>
 
+    <main class="detail-layout">
+      <section class="hero-section glass-panel hero-panel hero-mini">
+        <div class="hero-badge">Conceptualizer</div>
         <div class="portrait-frame">
-          <img id="portrait"
-               src="asset/images/LATE COAS POTRAIT.jpeg"
-               alt="Late Lt Gen TA Lagbaja"
-               class="portrait-img">
+          <img id="portrait" src="asset/images/LATE COAS POTRAIT.jpeg" alt="Late Lt Gen TA Lagbaja" class="portrait-img">
           <div class="portrait-shine" aria-hidden="true"></div>
         </div>
-
         <div class="nameplate">
           <h1 id="name">General Lagbaja</h1>
           <p id="title-role">Chief of Army Staff</p>
@@ -60,25 +52,9 @@
         </div>
       </section>
 
-      <section class="action-panel glass-panel">
-        <div class="section-label">Choose a Page</div>
-        <div class="action-buttons">
-          <a class="action-link" href="biography.html">
-            <span class="action-title">Biography</span>
-            <span class="action-desc">Read the full life story</span>
-          </a>
-          <a class="action-link" href="achievements.html">
-            <span class="action-title">Achievements</span>
-            <span class="action-desc">View service milestones and honors</span>
-          </a>
-          <a class="action-link" href="gallery.html">
-            <span class="action-title">Gallery</span>
-            <span class="action-desc">Open the image collection</span>
-          </a>
-        </div>
-      </section>
+      <section id="galleryPage" class="detail-shell"></section>
     </main>
-  </div><!-- /page-view -->
+  </div>
 
   <script src="asset/script.js"></script>
 </body>
