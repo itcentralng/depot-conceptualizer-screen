@@ -220,7 +220,7 @@ body { animation: pageLoad 0.8s ease both; }
 .detail-layout.single-column {
   grid-template-columns: 1fr;
   justify-items: center;
-  align-content: start;
+  align-content: center;
 }
 
 .achievements-page-shell,
@@ -237,7 +237,7 @@ body { animation: pageLoad 0.8s ease both; }
 }
 
 .bio-page-shell .detail-card {
-  height: min(66vh, 760px);
+  height: min(88vh, 1520px);
 }
 
 .achievements-page-shell .detail-card {
@@ -250,7 +250,7 @@ body { animation: pageLoad 0.8s ease both; }
 
 @media (max-width: 900px) {
   .bio-page-shell .detail-card {
-    height: min(72vh, 680px);
+    height: min(88vh, 1400px);
   }
 
   .achievements-page-shell .detail-card {
