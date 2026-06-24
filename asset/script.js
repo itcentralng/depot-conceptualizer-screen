@@ -56,6 +56,44 @@
       '</div>';
   }
 
+  function startAutoScroll(targetId) {
+    var target = document.getElementById(targetId);
+    if (!target) return;
+
+    var scroller = target.querySelector('.bio-scroll');
+    if (!scroller) return;
+
+    var timer = null;
+    var paused = false;
+    var step = 0.35;
+
+    function tick() {
+      if (paused) {
+        timer = window.setTimeout(tick, 60);
+        return;
+      }
+
+      var maxScroll = scroller.scrollHeight - scroller.clientHeight;
+      if (maxScroll <= 0) return;
+
+      if (scroller.scrollTop >= maxScroll - 1) {
+        scroller.scrollTop = 0;
+      } else {
+        scroller.scrollTop += step;
+      }
+
+      timer = window.setTimeout(tick, 32);
+    }
+
+    scroller.addEventListener('mouseenter', function () { paused = true; });
+    scroller.addEventListener('mouseleave', function () { paused = false; });
+    scroller.addEventListener('touchstart', function () { paused = true; }, { passive: true });
+    scroller.addEventListener('touchend', function () { paused = false; }, { passive: true });
+    scroller.addEventListener('wheel', function () { paused = true; clearTimeout(timer); timer = window.setTimeout(function () { paused = false; }, 1200); }, { passive: true });
+
+    timer = window.setTimeout(tick, 1200);
+  }
+
   function renderAchievements(targetId) {
     var target = document.getElementById(targetId);
     if (!target) return;
@@ -98,6 +136,7 @@
   var page = document.body.getAttribute('data-page') || 'home';
   if (page === 'bio') {
     renderBiography('bioPage');
+    startAutoScroll('bioPage');
   } else if (page === 'achievements') {
     renderAchievements('achievementsPage');
   } else if (page === 'gallery') {

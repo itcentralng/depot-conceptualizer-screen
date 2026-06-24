@@ -328,12 +328,13 @@ body { animation: pageLoad 0.8s ease both; }
   flex-direction: column;
   gap: 16px;
   padding-bottom: 24px;
+  justify-content: center;
 }
 
 .action-buttons {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  gap: 14px;
 }
 
 .action-link,
@@ -356,20 +357,34 @@ body { animation: pageLoad 0.8s ease both; }
   flex-direction: column;
   justify-content: center;
   text-decoration: none;
-  min-height: 96px;
+  min-height: 128px;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-link::after {
+  content: '';
+  position: absolute;
+  inset: auto -18% -32% auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 57, 50, 0.22) 0%, rgba(217, 57, 50, 0) 70%);
+  transform: translate(16px, 12px);
+  pointer-events: none;
 }
 
 .action-title {
   display: block;
-  font-size: 0.98rem;
+  font-size: 1.06rem;
   color: var(--white);
 }
 
 .action-desc {
   display: block;
-  margin-top: 8px;
+  margin-top: 10px;
   font-family: var(--f-serif);
-  font-size: 1rem;
+  font-size: 1.04rem;
   letter-spacing: 0;
   text-transform: none;
   color: rgba(253, 254, 255, 0.72);
@@ -380,6 +395,31 @@ body { animation: pageLoad 0.8s ease both; }
   transform: translateY(-2px);
   border-color: rgba(217, 57, 50, 0.6);
   box-shadow: 0 12px 30px rgba(217, 57, 50, 0.14);
+}
+
+.action-link:hover,
+.action-link:focus-visible {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(217, 57, 50, 0.78);
+  background: linear-gradient(135deg, rgba(217, 57, 50, 0.18), rgba(3, 6, 7, 0.88));
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(217, 57, 50, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.action-link:hover .action-title,
+.action-link:focus-visible .action-title {
+  color: var(--red);
+}
+
+.action-link:hover .action-desc,
+.action-link:focus-visible .action-desc {
+  color: rgba(253, 254, 255, 0.92);
+}
+
+.action-link:active {
+  transform: translateY(-1px) scale(0.995);
 }
 
 .action-btn.active {
