@@ -535,6 +535,10 @@ body { animation: pageLoad 0.8s ease both; }
   color: rgba(240, 232, 218, 0.92);
 }
 
+.bio-page-shell .detail-copy {
+  font-size: 1.75rem;
+}
+
 .detail-copy p + p {
   margin-top: 1em;
 }
