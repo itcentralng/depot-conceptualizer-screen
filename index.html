@@ -6,34 +6,20 @@
   <title>Conceptualizer — Nigerian Army Depot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="asset/styles.css">
 </head>
 <body data-page="home">
 
-  <!-- Video background -->
   <div class="bg-layer" aria-hidden="true">
-    <video class="bg-gif" autoplay muted loop playsinline>
+    <video class="bg-video" autoplay muted loop playsinline>
       <source src="asset/images/nigerian_army_depot_background.mp4" type="video/mp4">
     </video>
     <div class="bg-overlay"></div>
   </div>
 
-  <!-- Five-strip colour transition (load entrance + future navigation) -->
-  <div class="strips-container" aria-hidden="true">
-    <div class="strip s1"></div>
-    <div class="strip s2"></div>
-    <div class="strip s3"></div>
-    <div class="strip s4"></div>
-    <div class="strip s5"></div>
-  </div>
-
-  <!-- ================================
-       MAIN PAGE VIEW
-       ================================ -->
   <div class="page-view active" data-page="home">
 
-    <!-- Fixed top navbar -->
     <nav class="navbar">
       <img src="asset/images/logo.png" alt="Depot Logo" class="nav-logo" onerror="this.style.display='none'">
       <div class="brand">
@@ -45,43 +31,41 @@
       </button>
     </nav>
 
-    <main class="page-body home-layout">
-      <section class="hero-section glass-panel hero-panel">
-        <div class="hero-badge">Conceptualizer</div>
+    <main class="home-body">
 
+      <section class="hero-panel">
+        <div class="hero-badge">Conceptualizer</div>
         <div class="portrait-frame">
-          <img id="portrait"
+          <img class="portrait-img"
                src="asset/images/LATE COAS POTRAIT.jpeg"
-               alt="Late Lt Gen TA Lagbaja"
-               class="portrait-img">
+               alt="Late Lt Gen Taoreed Abiodun Lagbaja">
           <div class="portrait-shine" aria-hidden="true"></div>
         </div>
-
         <div class="nameplate">
-          <h1 id="name">General Lagbaja</h1>
-          <p id="title-role">Chief of Army Staff</p>
-          <p id="decorations" class="decorations-strip"></p>
+          <h1 id="name">Late Lt Gen T.A. Lagbaja</h1>
+          <p class="title-role" id="title-role">23rd Chief of Army Staff, Nigerian Army</p>
         </div>
       </section>
 
-      <section class="action-panel glass-panel">
+      <section class="action-panel">
         <div class="action-buttons">
           <a class="action-link" href="biography.html">
             <span class="action-title">Biography</span>
             <span class="action-desc">Read the full life story</span>
           </a>
-          <a class="action-link" href="achievements.html">
-            <span class="action-title">Achievements</span>
-            <span class="action-desc">View service milestones and honors</span>
-          </a>
           <a class="action-link" href="gallery.html">
             <span class="action-title">Gallery</span>
             <span class="action-desc">Open the image collection</span>
           </a>
+          <a class="action-link" href="achievements.html">
+            <span class="action-title">Achievements</span>
+            <span class="action-desc">Honours &amp; decorations</span>
+          </a>
         </div>
       </section>
+
     </main>
-  </div><!-- /page-view -->
+  </div>
 
   <script src="asset/script.js"></script>
 </body>
