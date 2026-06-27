@@ -47,22 +47,22 @@
       }
     ],
     gallery: [
-      { file: 'The Late COAS with his Spouse Mrs Maria Lagbaja on their Wedding Day.jpeg', caption: 'With Mrs Maria Lagbaja on their wedding day' },
-      { file: 'WhatsApp Image 2026-06-07 at 04.12.21.jpeg', caption: 'With Mrs Maria Lagbaja on their wedding day' },
-      { file: 'Late Lt Gen TA Lagbaja as an Instructor during a Field Training Exercise at the Nigerian Defence Academy Kaduna.jpeg', caption: 'Instructor during Field Training Exercise at NDA Kaduna' },
-      { file: 'The Late COAS as Commanding Officer 72 Special Forces Battalion with some members of the British Military Advisory Training Team (BMATT) during a Field Training Exercise.jpeg', caption: 'As Commanding Officer 72 Special Forces Battalion with BMATT' },
-      { file: 'Late Lt Gen TA Lagbaja with his spouse and children during his Course at the United States Army War College.jpeg', caption: 'With spouse and children at the United States Army War College' },
-      { file: 'Late Lt Gen TA Lagbaja with his spouse Mrs Maria Lagbaja during his investiture with his badge of rank as Maj Gen.jpeg', caption: 'With Mrs Maria Lagbaja at his investiture as Major General' },
-      { file: 'The President Commander in Chief of the Armed Forces Federal Republic of Nigeria President Bola Ahmed Tinubu with Mrs Maria Lagbaja decorating Late Lt Gen TA Lagba with his new badge of rank of Lt Gen after his confirmation by the National Ass.jpeg', caption: 'Decorated by President Bola Ahmed Tinubu after confirmation as Lt Gen' },
-      { file: 'Late Lt Gen TA Lagbaja receiving the Nigerian Army Command Flag from Lt Gen F Yahaya retired to signify his assumption of office as the 23rd COAS.jpeg', caption: 'Receiving the Nigerian Army Command Flag as 23rd COAS' },
-      { file: 'The late COAS inspecting the Quarter Guard during the Passing Out Parade of 86 Regular Recruit Intake at Depot Nigerian Army.jpeg', caption: 'Inspecting the Quarter Guard during the Passing Out Parade' },
-      { file: 'The Late COAS Delivering a Lecture to Participants of Army War College Nigeria Course 8 of 2024.jpeg', caption: 'Delivering a lecture to Army War College Nigeria Course 8 of 2024' },
-      { file: 'Late Lt Gen TA Lagbaja during the induction of 2 Bell Helicopters into the Nigerian Army at 3 Division Sports Ground, Maxwell Khobe Cantonment Jos.jpeg', caption: 'Induction of 2 Bell Helicopters into the Nigerian Army' },
-      { file: 'The Late COAS Inspecting the interior of a Mine Resistant Ambush  Protected Vehicle refurbished by the Command Engineering Depot Kaduna.jpeg', caption: 'Inspecting a Mine Resistant Ambush Protected Vehicle' },
-      { file: 'Late Lt Gen TA Lagbaja Conferring Presidential Commission on Officer Cadets of Executive Commission 1 of 2023 at the Ihejirika Auditorium Infantry Corps Centre Jaji.jpeg', caption: 'Conferring Presidential Commission on Officer Cadets at Infantry Corps Centre Jaji' },
-      { file: 'The Late COAS Presenting the Group Life Insurance Cheque  to the Next-of-Kin of a deceased soldier during the COAS Conference.jpeg', caption: 'Presenting group life insurance cheque to next-of-kin of a deceased soldier' },
-      { file: 'The Late COAS during his visit to see wounded soldiers at the 44 Nigerian Army Reference Hospital Kaduna.jpeg', caption: 'Visit to wounded soldiers at 44 Nigerian Army Reference Hospital Kaduna' },
-      { file: 'The Couryesy Visit of Late Lt Gen TA Lagbaja to the Emir of Bauchi Alh Dr Rilwan Suleiman Adamu to Enhance Civil Military Cooperation.jpeg', caption: 'Courtesy visit to the Emir of Bauchi' }
+      { file: 'gallery_01.jpeg', caption: 'With Mrs Maria Lagbaja on their wedding day' },
+      { file: 'gallery_02.jpeg', caption: 'With Mrs Maria Lagbaja on their wedding day' },
+      { file: 'gallery_03.jpeg', caption: 'Instructor during Field Training Exercise at NDA Kaduna' },
+      { file: 'gallery_04.jpeg', caption: 'As Commanding Officer 72 Special Forces Battalion with BMATT' },
+      { file: 'gallery_05.jpeg', caption: 'With spouse and children at the United States Army War College' },
+      { file: 'gallery_06.jpeg', caption: 'With Mrs Maria Lagbaja at his investiture as Major General' },
+      { file: 'gallery_07.jpeg', caption: 'Decorated by President Bola Ahmed Tinubu after confirmation as Lt Gen' },
+      { file: 'gallery_08.jpeg', caption: 'Receiving the Nigerian Army Command Flag as 23rd COAS' },
+      { file: 'gallery_09.jpeg', caption: 'Inspecting the Quarter Guard during the Passing Out Parade' },
+      { file: 'gallery_10.jpeg', caption: 'Delivering a lecture to Army War College Nigeria Course 8 of 2024' },
+      { file: 'gallery_11.jpeg', caption: 'Induction of 2 Bell Helicopters into the Nigerian Army' },
+      { file: 'gallery_12.jpeg', caption: 'Inspecting a Mine Resistant Ambush Protected Vehicle' },
+      { file: 'gallery_13.jpeg', caption: 'Conferring Presidential Commission on Officer Cadets at Infantry Corps Centre Jaji' },
+      { file: 'gallery_14.jpeg', caption: 'Presenting group life insurance cheque to next-of-kin of a deceased soldier' },
+      { file: 'gallery_15.jpeg', caption: 'Visit to wounded soldiers at 44 Nigerian Army Reference Hospital Kaduna' },
+      { file: 'gallery_16.jpeg', caption: 'Courtesy visit to the Emir of Bauchi' }
     ]
   };
 
