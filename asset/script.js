@@ -72,20 +72,38 @@
     if (el) el.textContent = val;
   }
 
-  /* ── Strip transition ───────────────────────────────── */
-  function runStrips() {
-    var strips = document.querySelectorAll('.strip');
-    if (!strips.length) return;
-    strips.forEach(function (s) { s.classList.add('slide-in'); });
-    setTimeout(function () {
-      strips.forEach(function (s) { s.classList.remove('slide-in'); s.classList.add('slide-out'); });
-      setTimeout(function () {
-        strips.forEach(function (s) { s.classList.remove('slide-out'); });
-      }, 650);
-    }, 850);
+  /* ── SPA Navigation ─────────────────────────────────── */
+  var currentPage = 'home';
+
+  window.navigateTo = function (page) {
+    if (page === currentPage) return;
+    showPage(page);
+  };
+
+  window.closeApp = function () {
+    window.close();
+  };
+
+  function showPage(page) {
+    document.querySelectorAll('.page-view').forEach(function (el) {
+      el.classList.remove('active');
+    });
+    var target = document.getElementById('page-' + page);
+    if (target) target.classList.add('active');
+    currentPage = page;
+
+    if (page === 'bio') {
+      renderBiography('bioPage');
+      startAutoScroll('bioPage');
+    } else if (page === 'achievements') {
+      renderAchievements('achievementsPage');
+      startAutoScroll('achievementsPage');
+    } else if (page === 'gallery') {
+      renderGallery('galleryPage');
+    }
   }
 
-  /* ── Biography page ─────────────────────────────────── */
+  /* ── Biography ──────────────────────────────────────── */
   function renderBiography(targetId) {
     var target = document.getElementById(targetId);
     if (!target) return;
@@ -144,7 +162,7 @@
     timer = setTimeout(tick, 1800);
   }
 
-  /* ── Achievements page ──────────────────────────────── */
+  /* ── Achievements ───────────────────────────────────── */
   function renderAchievements(targetId) {
     var target = document.getElementById(targetId);
     if (!target) return;
@@ -176,7 +194,7 @@
       '<div class="detail-card">' + content + '</div>';
   }
 
-  /* ── Gallery page ───────────────────────────────────── */
+  /* ── Gallery ────────────────────────────────────────── */
   function renderGallery(targetId) {
     var target = document.getElementById(targetId);
     if (!target) return;
@@ -228,17 +246,5 @@
   setText('name', DATA.name);
   setText('title-role', DATA.titleRole);
 
-  var page = document.body.dataset.page || 'home';
-  if (page === 'bio') {
-    renderBiography('bioPage');
-    startAutoScroll('bioPage');
-  } else if (page === 'achievements') {
-    renderAchievements('achievementsPage');
-    startAutoScroll('achievementsPage');
-  } else if (page === 'gallery') {
-    renderGallery('galleryPage');
-  } else {
-    runStrips();
-  }
 
 })();
